@@ -1,0 +1,207 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.wrapper {
+    @apply shadow-lg fixed z-40 bg-white w-full -mt-0
+}
+
+.nav-div {
+    @apply mx-auto flex justify-between items-center py-4 text-[0.9rem] text-gray-500
+}
+
+.menu-items {
+    @apply hidden sm:flex md:flex justify-start gap-7 cursor-pointer;
+}
+
+.menu-item {
+    @apply border-transparent hover:border-b-gray-500 hover:scale-105 transition-all ease-in-out duration-500
+}
+
+.btn {
+    @apply h-[55px] px-[30px] text-[1rem] transition-all duration-300 text-white rounded-[18px] flex items-center gap-2 
+}
+
+.btn-primary {
+    @apply bg-primary hover:bg-primary-hover;
+}
+
+.btn-accent {
+    @apply bg-accent hover:bg-accent-hover;
+}
+
+.btn_item {
+    @apply h-[75px] rounded-md
+} */
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes spinY {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
+}
+
+@keyframes spinZ {
+    from {transform: rotateZ(0deg);}
+    to {transform: rotateZ(360deg);}
+}
+
+@keyframes spinXY {
+    from {transform: rotateX(0deg);}
+    to {transform: rotateX(360deg);}
+}
+
+@keyframes spinX {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
+}
+
+@keyframes spinV {
+    from {transform: rotateX(0deg);}
+    to {transform: rotateX(360deg);}
+}
+
+.spinY {
+    animation: spinY 60s linear infinite;
+    transform-style: preserve-3d;
+}
+
+.spinZ {
+    animation: spinZ 2s linear infinite;
+    transform-style: preserve-3d;
+}
+
+.spinXY {
+    animation: spinXY 10s linear infinite;
+    transform-style: preserve-3d;
+}
+
+.spinX {
+    animation: spinX 2s linear infinite;
+    transform-style: preserve-3d;
+}
+
+.spinV {
+    animation: spinV 20s linear infinite;
+    transform-style: preserve-3d;
+}
+
+
+
+a {
+    @apply text-[20px] hover:text-accent transition-all duration-300 p-2;
+}
+
+
+.btn {
+    @apply h-[55px] px-[30px] text-[1rem] transition-all duration-300 text-white rounded-[18px] flex items-center gap-2 
+}
+
+.btn-primary {
+    @apply bg-primary hover:bg-primary-hover;
+}
+
+.btn-accent {
+    @apply bg-accent hover:bg-accent-hover;
+}
+
+.wrapper {
+    @apply shadow-lg fixed z-40 bg-white w-full;
+}
+
+.nav-div {
+    @apply mx-auto flex justify-between items-center py-4 text-[0.9rem] text-gray-500
+}
+
+.menu-items {
+    @apply hidden sm:flex md:flex justify-start gap-7 cursor-pointer ;
+}   
+
+.menu-item {
+    @apply border-transparent hover:border-b-gray-500 hover:scale-105 transition-all
+     ease-in-out duration-500;
+}
+
+.mobile-menu {
+    @apply flex flex-col relative mt-5 px-3 gap-3 border border-accent-secondary rounded-xl cursor-pointer  items-center
+}
+
+.btn-right-arrow {
+    @apply bg-accent-secondary hover:bg-accent/30 w-[45px] rounded-full transition-all ease-in-out duration-300
+}
+
+.btn_item {
+    @apply h-[75px] rounded-md
+}
+
+
+/* footer */
+.footer {
+    z-index: 20px;
+    margin-top: 80px;
+    margin-top: 150px;
+}
+
+.flex_div {
+    gap: 2rem;
+    gap: 100px;
+    margin-bottom: 150px;
+}
+
+.list_div {
+    gap: 50px;
+}
+
+.youtube {
+    color: #e10600;
+}
+.facbook {
+    color: #1877f2;
+}
+.linkin {
+    color: #0077b5;
+}
+.instagram {
+    color: #962fbf;
+}
+
+.flex-1 {
+    gap: 2rem;
+    gap: 100px;
+}
+
+.footer__item {
+    max-width: 260px;
+}
+.flex__div {
+    gap: 0.5rem;
+}
+.logo {
+    font-size: 1rem;
+}
+
+.icon {
+    color: #1877f2;
+}
+
+.letter-spacing {
+    left: 0.5em;
+}
+.border_line {
+    width: 12rem;
+}
+
+
+
+
+
+
+
+    
