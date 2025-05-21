@@ -18,7 +18,7 @@ const Updates = () => {
 
             <div className="w-full h-[600] relative overflow-hidden rounded-2xl shadow-lg">
                 <div className="">
-                    <img src={update_1} alt="holiday escape" className='w-full h-full object-cover spinY' />
+                    <img src={update_1} alt="holiday escape" className='w-full h-full object-cover' />
                 </div>
 
                 <h1 className=' font-semibold mt-2 ml-4'>Transforming Common Spaces in Modern Hotels</h1>
@@ -28,7 +28,7 @@ const Updates = () => {
 
             <div className="w-full h-[600] relative overflow-hidden rounded-2xl shadow-lg">
                 <div className="mb-0 pb-0">
-                    <img src={update_2} alt="holiday escape" className='w-full h-full object-cover spinX' />
+                    <img src={update_2} alt="holiday escape" className='w-full h-full object-cover' />
                 </div>
 
                 <h1 className=' font-semibold mt-2 ml-4'>Innovative Marketing Strategies for Boutique Hotels</h1>
@@ -38,7 +38,7 @@ const Updates = () => {
 
             <div className="w-full h-[600] relative overflow-hidden rounded-2xl shadow-lg">
                 <div className="mb-0 pb-0">
-                    <img src={update_3} alt="holiday escape" className='w-full h-full object-cover spinXY' />
+                    <img src={update_3} alt="holiday escape" className='w-full h-full object-cover' />
                 </div>
 
                 <h1 className=' font-semibold mt-2 ml-4'>Hotels are Adapting to Modern Traveler Preferences</h1>

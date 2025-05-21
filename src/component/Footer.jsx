@@ -2,13 +2,13 @@ import { RiFacebookCircleFill, RiInstagramFill, RiLinkedinFill, RiStarFill, RiTw
 
 const Footer = () => {
   return (
-    <section className='footer bg-zinc-900 z-20  lg:mt-[10px]' id='services'>
+    <section className=' bg-zinc-900 z-20 mt-0 pt-0  lg:mt-[10px]' id='services'>
         <div className="container mx-auto px-0">
             <div className="flex flex-col lg:flex-row gap-1 lg:gap-[100x] lg:mb-[150px]">
                 <div className="footer__item">
 
                         <div className='mb-2 text-lg text-center ml-16 m'>
-                            <h2 className='font-bold text-white'>NEW-GUIDANCE</h2>
+                            <h2 className='font-bold text-white mt-8 text-2xl'>NEW-GUIDANCE</h2>
                             <p className='flex justify-between size-12 text-accent mx-auto'>
                               <RiStarFill/>
                               <RiStarFill/>
@@ -75,7 +75,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="footer__item mx-auto">
+                    <div className="footer__item mx-auto !mb-2">
                         <h3 className='text-3xl mb-3'>Services</h3>
                         <ul>
                             

@@ -18,7 +18,7 @@ const Theme = () => {
     }, []);
 
   return (
-    <section className='bg-accent'>
+    <section className='bg-accent mb-0 pb-0'>
         <div className="pt-32 text-white">
        
             <h2 className=' flex items-center justify-center font-bold lg:text-4xl '>@newguidance_hotel_theme</h2>
@@ -61,7 +61,7 @@ const Theme = () => {
                     
                 </div>
 
-                <div  className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg sm:pt-0">
+                <div  className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg pb-0 mb-0">
                     <img src={theme_8} alt="holiday escape" className='w-full h-full object-cover' />
                     
                 </div>
