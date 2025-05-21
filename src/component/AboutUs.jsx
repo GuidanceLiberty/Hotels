@@ -1,5 +1,5 @@
 import React from 'react';
-import Room_A from '../assets/images/img-11.jpg';
+import Room_A from '../assets/hero/img-11.jpg';
 import { RiStarFill } from '@remixicon/react';
 
 const AboutUs = () => {

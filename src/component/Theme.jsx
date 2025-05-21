@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import theme_1 from '../assets/images/theme-1.jpeg'
-import theme_2 from '../assets/images/theme-2.jpeg'
-import theme_3 from '../assets/images/theme-3.jpeg'
-import theme_4 from '../assets/images/theme-4.jpeg'
-import theme_5 from '../assets/images/theme-5.jpeg'
-import theme_6 from '../assets/images/theme-6.jpeg'
-import theme_7 from '../assets/images/theme-7.jpeg'
-import theme_8 from '../assets/images/theme-8.jpeg'
+import theme_1 from '../assets/hero/theme-1.jpeg'
+import theme_2 from '../assets/hero/theme-2.jpeg'
+import theme_3 from '../assets/hero/theme-3.jpeg'
+import theme_4 from '../assets/hero/theme-4.jpeg'
+import theme_5 from '../assets/hero/theme-5.jpeg'
+import theme_6 from '../assets/hero/theme-6.jpeg'
+import theme_7 from '../assets/hero/theme-7.jpeg'
+
 import 'aos/dist/aos.css'
 import AOS from 'aos'
 
@@ -83,7 +83,7 @@ const Theme = () => {
           data-aos="slide-left"
           className="w-full h-[350px] lg:h-[400px] relative overflow-hidden rounded-lg shadow-lg hover:scale-105 transform transition duration-300"
         >
-          <img src={theme_8} alt="Theme 8" className="w-full h-full object-cover rounded-lg" />
+          
         </div>
       </div>
     </section>

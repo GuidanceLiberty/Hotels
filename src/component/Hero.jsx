@@ -6,12 +6,12 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 import hero_3 from '../assets/hero/hero-3.jpg'
-import Room_1 from '../assets/images/room-10.jpg'
-import Room_2 from '../assets/images/room-11.jpg'
-import Room_3 from '../assets/images/room-12.jpg'
-import Room_4 from '../assets/images/room-13.jpg'
-import Room_5 from '../assets/images/room-9.jpg'
-import Room_6 from '../assets/images/room-14.jpg'
+import Room_1 from '../assets/hero/hotel-1.jpeg'
+import Room_2 from '../assets/hero/hotel-2.jpeg'
+import Room_3 from '../assets/hero/hotel-3.jpg'
+import Room_4 from '../assets/hero/hotel-4.jpg'
+import Room_5 from '../assets/hero/hotel-5.jpg'
+import Room_6 from '../assets/hero/hotel-6.jpg'
 
 const slides = [
   {

@@ -4,10 +4,10 @@ import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
 import { motion } from 'framer-motion'
 
-import image_1 from '../assets/images/img-1.jpg'
-import image_2 from '../assets/images/img-2.jpg'
-import image_3 from '../assets/images/img-3.jpg'
-import image_4 from '../assets/images/img-4.jpg'
+import image_1 from '../assets/hero/img-1.jpg'
+import image_2 from '../assets/hero/img-2.jpg'
+import image_3 from '../assets/hero/img-3.jpg'
+import image_4 from '../assets/hero/img-4.jpg'
 
 const projectData = [
   { image: image_2, title: 'Ocean View Suite' },

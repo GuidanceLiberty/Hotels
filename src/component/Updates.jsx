@@ -1,7 +1,7 @@
 import React from 'react'
-import update_1 from '../assets/images/update-3.jpg'
-import update_2 from '../assets/images/update-4.jpg'
-import update_3 from '../assets/images/update-5.jpg'
+import update_1 from '../assets/hero/update-1.jpg'
+import update_2 from '../assets/hero/update-4.jpg'
+import update_3 from '../assets/hero/update-5.jpg'
 
 const updates = [
   {

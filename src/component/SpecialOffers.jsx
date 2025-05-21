@@ -1,8 +1,8 @@
 import React from 'react'
-import img_1 from '../assets/images/img-8.jpg'
-import img_2 from '../assets/images/img-7.jpg'
-import img_3 from '../assets/images/img-6.jpg'
-import img_4 from '../assets/images/img-10.jpg'
+import img_1 from '../assets/hero/img-8.jpg'
+import img_2 from '../assets/hero/img-7.jpg'
+import img_3 from '../assets/hero/img-6.jpg'
+import img_4 from '../assets/hero/hotel-7.jpg'
 
 const offers = [
   {
