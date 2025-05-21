@@ -1,49 +1,7 @@
 import React from 'react'
-import heroImg from '../assets/hero/hero-1.jpg'
+import heroImg from '../assets/hero/hero-2.jpg'
 
-{/* <script setup>
-import { frame, motion, useMotionValue, useSpring } from "motion-v"
-import { ref, onMounted, onUnmounted } from "vue"
 
-const spring = { damping: 3, stiffness: 50, restDelta: 0.001 }
-
-const elementRef = ref(null)
-const xPoint = useMotionValue(0)
-const yPoint = useMotionValue(0)
-const x = useSpring(xPoint, spring)
-const y = useSpring(yPoint, spring)
-
-const handlePointerMove = ({ clientX, clientY }) => {
-    const element = elementRef.value?.$el
-    if (!element) return
-
-    frame.read(() => {
-        xPoint.set(clientX - element.offsetLeft - element.offsetWidth / 2)
-        yPoint.set(clientY - element.offsetTop - element.offsetHeight / 2)
-    })
-}
-
-onMounted(() => {
-    window.addEventListener("pointermove", handlePointerMove)
-})
-
-onUnmounted(() => {
-    window.removeEventListener("pointermove", handlePointerMove)
-})
-</script>
-
-<template>
-    <motion.div ref="elementRef" class="ball" :style="{ x, y }" />
-</template>
-
-<style>
-.ball {
-    width: 100px;
-    height: 100px;
-    background-color: #ff0088;
-    border-radius: 50%;
-}
-</style> */}
 
 
 
