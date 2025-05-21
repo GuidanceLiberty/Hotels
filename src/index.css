@@ -113,11 +113,11 @@ a {
 }
 
 .wrapper {
-    @apply shadow-lg fixed z-40 bg-white w-full;
+    @apply shadow-sm fixed z-40 bg-white w-full;
 }
 
 .nav-div {
-    @apply mx-auto flex justify-between items-center py-4 text-[0.9rem] text-gray-500
+    @apply mx-auto flex justify-between items-center py-[-2rem] text-[0.9rem] text-gray-500
 }
 
 .menu-items {

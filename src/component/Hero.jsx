@@ -1,31 +1,64 @@
 import React from 'react'
-import heroImg from '../assets/hero/hero-2.jpg'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import heroImg1 from '../assets/hero/hero-3.jpg'
+import heroImg2 from '../assets/hero/hero-4.jpg'
+import heroImg3 from '../assets/hero/hero-5.jpeg' // Add or adjust as needed
 
-
-
-
+const slides = [
+  {
+    id: 1,
+    image: heroImg1,
+    title: 'Experience Paradise',
+    text: 'Discover the ultimate luxury in our beachfront suites and spa experiences.',
+  },
+  {
+    id: 2,
+    image: heroImg2,
+    title: 'Holiday Bliss Awaits You',
+    text: 'Immerse yourself in the epitome of luxury at New-Guidance, your premier destination in Lagos.',
+  },
+  {
+    id: 3,
+    image: heroImg3,
+    title: 'Escape to Elegance',
+    text: 'A serene escape for discerning travelers seeking beauty and comfort.',
+  }
+]
 
 const Hero = () => {
   return (
-    <section className='hero h-[640px] bg-center bg-no-repeat bg-fixed relative z-20 mt-7 mb-10'
-    style={{backgroundImage: `url(${heroImg})`, }}>
-      <div className="container mx-auto h-full flex items-center justify-center">
-        <div className="hero__text">
-          <h1 className='text-[2.3rem] md:text-[3.5rem] sm:text-[2.3rem] font-b text-center'>Holiday Bliss Await You</h1>
-
-          <p className='mb-8 text-[1.1rem] text-center mt-8 text-gray-800 font-bold'>
-            immerse yourself in the epitome of luxury at New-Guidance, your premier destination in Lagos.
-            Our hotel redefines elegance and comfort, offering an equisite escap for discerning travels.
-          </p>
-
-          <button className='btn btn-primary mx-auto lg-mx-0 bg-accent text-white ml-4'>
-            BOOK YOUR STAY
-          </button>
-        </div>
-      </div>
-
-      
-
+    <section className='hero relative z-20 mt-0 mb-0'>
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        autoplay={{ delay: 5000 }}
+        pagination={{ clickable: true }}
+        loop
+        className="w-full h-screen" // full viewport height
+      >
+        {slides.map(slide => (
+          <SwiperSlide key={slide.id}>
+            <div
+              className='w-full bg-center bg-cover flex items-center justify-center h-[650px] bg-fixed z-20 mt-12 '
+              style={{ backgroundImage: `url(${slide.image})` }}
+            >
+              <div className="text-center px-4 max-w-2xl">
+                <h1 className='text-[2.3rem] md:text-[3.5rem] font-b text-white drop-shadow-md'>
+                  {slide.title}
+                </h1>
+                <p className='mb-8 text-[1.1rem] mt-8 text-white font-bold drop-shadow-md'>
+                  {slide.text}
+                </p>
+                <button className='btn btn-primary bg-accent text-white'>
+                  BOOK YOUR STAY
+                </button>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   )
 }
