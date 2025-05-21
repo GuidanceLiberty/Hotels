@@ -1,34 +1,65 @@
-import { RiArrowDownLine } from '@remixicon/react'
-import React from 'react'
-
-
-
-
+import React, { useState } from 'react'
 
 const Reservation = () => {
+  const [adults, setAdults] = useState(1)
+  const [children, setChildren] = useState(0)
+
+  const increment = (setter, value) => setter(value + 1)
+  const decrement = (setter, value) => {
+    if (value > 0) setter(value - 1)
+  }
+
   return (
     <section className='py-10 text-center shadow-lg bg-accent-secondary'>
-      <div className="shadow-lg bg-white ">
-        <h3 className='font-semibold pt-4'>Reservation</h3>
-        <p className='text-sm py-2'>Check In</p>
-        <p>2025-05-10</p>
-        <p className='text-sm py-2'>Check Out</p>
-        <p>2025-05-11</p>
+      <div className="shadow-lg bg-white max-w-md mx-auto px-6 py-8 rounded-lg">
+        <h3 className='font-semibold text-xl'>Reservation</h3>
 
-        <h4 className='pt-8'>Adult</h4>
-        <div className='flex items-center justify-center space-x-6 text-white'>
-            <button className='w-16 h-16 bg-accent px-4 py-2 rounded-full mt-2 text-2xl font-semibold'>-</button>
-            <button className='w-16 h-16 bg-accent px-4 py-2 rounded-full mt-2 text-2xl font-semibold'>+</button>                     
+        <div className="py-4">
+          <p className='text-sm'>Check In</p>
+          <p>2025-05-10</p>
+          <p className='text-sm mt-4'>Check Out</p>
+          <p>2025-05-11</p>
         </div>
 
-        <h4 className='pt-8'>Children</h4>
-        <div className='flex items-center justify-center space-x-6 text-white'>
-            <button className='w-16 h-16 bg-accent px-4 py-2 rounded-full mt-2 text-2xl font-semibold'>-</button>
-            <button className='w-16 h-16 bg-accent px-4 py-2 rounded-full mt-2 text-2xl font-semibold'>+</button>                     
+        {/* Adults */}
+        <h4 className='pt-6 font-semibold'>Adults</h4>
+        <div className='flex items-center justify-center space-x-4 text-white mt-2'>
+          <button
+            onClick={() => decrement(setAdults, adults)}
+            className='w-10 h-10 bg-accent rounded-full text-xl font-bold'
+          >
+            −
+          </button>
+          <span className="text-black font-medium text-lg">{adults}</span>
+          <button
+            onClick={() => increment(setAdults, adults)}
+            className='w-10 h-10 bg-accent rounded-full text-xl font-bold'
+          >
+            +
+          </button>
         </div>
 
-        <button className='bg-accent text-white my-6 rounded-md'>CHECK AVAILABILITY</button>
+        {/* Children */}
+        <h4 className='pt-6 font-semibold'>Children</h4>
+        <div className='flex items-center justify-center space-x-4 text-white mt-2'>
+          <button
+            onClick={() => decrement(setChildren, children)}
+            className='w-10 h-10 bg-accent rounded-full text-xl font-bold'
+          >
+            −
+          </button>
+          <span className="text-black font-medium text-lg">{children}</span>
+          <button
+            onClick={() => increment(setChildren, children)}
+            className='w-10 h-10 bg-accent rounded-full text-xl font-bold'
+          >
+            +
+          </button>
+        </div>
 
+        <button className='bg-accent text-white mt-6 px-6 py-2 rounded-md hover:bg-accent-dark transition'>
+          CHECK AVAILABILITY
+        </button>
       </div>
     </section>
   )
