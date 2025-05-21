@@ -51,17 +51,17 @@ const Theme = () => {
                     
                 </div>
 
-                <div  className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg  ">
+                <div data-aos="zoom-in"  className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg  ">
                     <img src={theme_6} alt="holiday escape" className='w-full h-full object-cover' />
                     
                 </div>
 
-                <div  className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg ">
+                <div data-aos="zoom-out" className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg ">
                     <img src={theme_7} alt="holiday escape" className='w-full h-full object-cover' />
                     
                 </div>
 
-                <div  className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg pb-0 mb-0">
+                <div data-aos="slide-left" className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg ">
                     <img src={theme_8} alt="holiday escape" className='w-full h-full object-cover' />
                     
                 </div>
