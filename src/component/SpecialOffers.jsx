@@ -3,76 +3,67 @@ import img_1 from '../assets/images/img-8.jpg'
 import img_2 from '../assets/images/img-7.jpg'
 import img_3 from '../assets/images/img-6.jpg'
 import img_4 from '../assets/images/img-10.jpg'
-import { motion } from 'framer-motion'
 
+const offers = [
+  {
+    image: img_1,
+    title: 'Holiday Escape',
+    description:
+      'Treat yourself to a holiday retreat before the year ends. Enjoy festive discounts and cozy accommodations for the perfect winter getaway.',
+  },
+  {
+    image: img_2,
+    title: 'Year-End Special',
+    description:
+      'End the year on a high note with unbeatable savings. Book your year-end escape and enjoy extra discounts, free upgrades, and more!',
+  },
+  {
+    image: img_3,
+    title: 'New Year Special',
+    description:
+      'Start the year with a fresh getaway! Enjoy exclusive discounts and special perks on all bookings made for January. New year, new memories.',
+  },
+  {
+    image: img_4,
+    title: 'Special Memories',
+    description:
+      'Start creating new memories with loved ones. Enjoy exclusive discounts and perks on all bookings made just for you. Cheers to comfort!',
+  },
+]
 
 const SpecialOffers = () => {
   return (
-    <section className='bg-accent'>
-        <div className="pt-32 text-white">
-            <h1 className=' flex items-center justify-center font-bold text-sm'>GRAB IT NOW</h1>
-            <h2 className=' flex items-center justify-center font-semibold text-4xl '>Special Offers</h2>
-        </div>
+    <section className="bg-accent py-20 px-4 lg:px-16">
+      <div className="text-center text-white mb-12">
+        <h1 className="font-bold text-sm tracking-widest">GRAB IT NOW</h1>
+        <h2 className="text-4xl font-semibold mt-2">Special Offers</h2>
+      </div>
 
-            <div className="project__grid grid grid-cols-1 lg:grid-cols-2 gap-2">
-                <div className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg mt-8 ">
-                    <img src={img_1} alt="holiday escape" className='w-full h-full object-cover' />
-                    
-                    <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-8 text-white">
-                        <h2 className='text-3xl font-semibold mb-3 flex items-center justify-center'>Holiday Escape</h2>
-                        <p className=' mb-5 max-w-2xl flex items-center justify-center mx-auto text-2xl'>
-                            Treat yourself to a holiday retreat before the year ends. Enjoy festive discounts and cozy accommodations for the perfect winter getaway.
-                        </p>
-
-                        <button className=''>VIEW DETAILS</button>
-                    </div>
-                </div>
-
-
-                <div className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg mt-8">
-                    <img src={img_2} alt="holiday escape" className='w-full h-full object-cover' />
-                    
-                    <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-8 text-white">
-                        <h2 className='text-3xl font-semibold mb-3 flex items-center justify-center'>Year-End Special</h2>
-                        <p className=' mb-5 max-w-2xl flex items-center justify-center mx-auto text-2xl'>
-                            End the year on a high note with unbeatable savings. Book your year-end escape and enjoy extra discounts, free upgrades, and more!
-                        </p>
-
-                        <button className=''>VIEW DETAILS</button>
-                    </div>
-                </div>
-
-
-            <div className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg mt-8 mb-8">
-            <img src={img_3} alt="holiday escape" className='w-full h-full object-cover' />
-            
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-8 text-white">
-                <h2 className='text-3xl font-semibold mb-3 flex items-center justify-center'>New Year Special</h2>
-                <p className=' mb-5 max-w-2xl flex items-center justify-center mx-auto text-2xl'>
-                    Start the year with a fresh getaway! Enjoy exclusive discounts and special perks on all bookings made for january. New year, new memories
-                </p>
-
-                 <button className=''>VIEW DETAILS</button>
-                </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {offers.map((offer, index) => (
+          <div
+            key={index}
+            className="relative h-[450px] rounded-2xl overflow-hidden shadow-lg group transition-transform duration-300 hover:scale-[1.02]"
+          >
+            <img
+              src={offer.image}
+              alt={offer.title}
+              className="w-full h-full object-cover group-hover:brightness-75 transition duration-300"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-6 text-white">
+              <h3 className="text-2xl font-bold text-center mb-3">{offer.title}</h3>
+              <p className="text-center text-sm mb-4">{offer.description}</p>
+              <div className="flex justify-center">
+                <button className="bg-white text-accent font-medium px-5 py-2 rounded-full text-sm hover:bg-gray-200 transition">
+                  VIEW DETAILS
+                </button>
+              </div>
             </div>
-
-
-            <div className="w-full h-[600] relative overflow-hidden rounded-none lg:rounded-2xl shadow-lg mt-8 mb-8">
-            <img src={img_4} alt="holiday escape" className='w-full h-full object-cover' />
-            
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-8 text-white">
-                <h2 className='text-3xl font-semibold mb-3 flex items-center justify-center'>Special Memories</h2>
-                <p className=' mb-5 max-w-2xl flex items-center justify-center mx-auto text-2xl'>
-                    Start creating New memories with love ones. Enjoy exclusive discounts and special perks on all bookings made just for you. Cheers to a better comfort here.
-                </p>
-
-                <button className=''>VIEW DETAILS</button>
-                </div>
-            </div>
+          </div>
+        ))}
       </div>
     </section>
   )
 }
 
 export default SpecialOffers
-

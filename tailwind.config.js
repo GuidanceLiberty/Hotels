@@ -1,12 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class', // <-- Add this line to enable class-based dark mode
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     fontFamily: {
-      primary: "DM Serif Display", secondary: "Jost",
+      primary: "DM Serif Display",
+      secondary: "Jost",
     },
     backgroundImage: {
       hero: 'url(/assets/hero/bg.jpg)',
@@ -23,10 +25,9 @@ export default {
           DEFAULT: '#cda274',
           secondary: '#f4f0ec',
           hover: '#b88c5d',
-        },
-      },
+        },
+      },
     },
   },
   plugins: [],
 }
-

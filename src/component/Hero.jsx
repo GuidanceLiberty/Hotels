@@ -17,7 +17,7 @@ const slides = [
   {
     id: 0,
     image: hero_3,
-    title: 'Holiday Bliss Await You!',
+    title: 'Holiday Bliss Awaits You!',
     text: 'Discover the ultimate luxury in our beachfront suites and spa experiences.',
   },
   { id: 1, image: Room_1, title: 'Deluxe Room', text: '' },
@@ -30,7 +30,7 @@ const slides = [
 
 const Hero = () => {
   return (
-    <section className='hero relative z-20 mt-0 mb-0'>
+    <section className='relative z-20'>
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{ delay: 5000 }}
@@ -39,20 +39,23 @@ const Hero = () => {
         loop
         className="w-full h-screen"
       >
-        {slides.map(slide => (
+        {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className='w-full bg-center bg-cover flex items-center justify-center h-[650px] bg-fixed z-20 mt-12'
+              className="w-full h-full bg-center bg-cover flex items-center justify-center bg-fixed"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="text-center px-4 max-w-2xl">
-                <h1 className='text-[2.3rem] md:text-[3.5rem] font-b text-white drop-shadow-md'>
+              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+              <div className="text-center px-6 sm:px-12 max-w-3xl relative z-10">
+                <h1 className="text-3xl sm:text-5xl font-extrabold text-white drop-shadow-lg mb-4">
                   {slide.title}
                 </h1>
-                <p className='mb-8 text-[1.1rem] mt-8 text-white font-bold drop-shadow-md'>
-                  {slide.text}
-                </p>
-                <button className='btn btn-primary bg-accent text-white'>
+                {slide.text && (
+                  <p className="text-lg sm:text-xl text-white font-semibold drop-shadow-md mb-8 max-w-xl mx-auto">
+                    {slide.text}
+                  </p>
+                )}
+                <button className="btn bg-accent text-white px-8 py-4 rounded-md shadow-xl transition-transform transform hover:scale-105 duration-300">
                   BOOK YOUR STAY
                 </button>
               </div>
@@ -61,7 +64,15 @@ const Hero = () => {
         ))}
       </Swiper>
 
-      {/* Optional: You can style or customize navigation icons with Tailwind or custom CSS */}
+      {/* Navigation and Pagination dots - optional styling */}
+      <div className="absolute top-1/2 left-0 right-0 flex justify-between px-6 z-30">
+        <button className="bg-white text-black p-2 rounded-full shadow-lg opacity-80 hover:opacity-100 transition">
+          &#x2190;
+        </button>
+        <button className="bg-white text-black p-2 rounded-full shadow-lg opacity-80 hover:opacity-100 transition">
+          &#x2192;
+        </button>
+      </div>
     </section>
   )
 }

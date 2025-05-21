@@ -1,56 +1,57 @@
-import { RiArrowRightLine, RiRestaurantFill } from '@remixicon/react'
+import React from 'react'
 import update_1 from '../assets/images/update-3.jpg'
 import update_2 from '../assets/images/update-4.jpg'
 import update_3 from '../assets/images/update-5.jpg'
 
+const updates = [
+  {
+    image: update_1,
+    title: 'Transforming Common Spaces in Modern Hotels',
+    description:
+      'With style and grace, hotels redefine. Shared spaces that feel warm, not just fine. From lobbies to lounges, modern and bright, where comfort and community both unite.',
+  },
+  {
+    image: update_2,
+    title: 'Innovative Marketing Strategies for Boutique Hotels',
+    description:
+      'Crafting stories that guests adore. Beyond the stay, they offer more. With charm and voice that truly sells, boutique hotels weave magic well.',
+  },
+  {
+    image: update_3,
+    title: 'Hotels are Adapting to Modern Traveler Preferences',
+    description:
+      'From smart tech rooms to eco flair, hotels now show they truly care. Personal touches, flexible stays, shaping journeys in thoughtful ways.',
+  },
+]
+
 const Updates = () => {
   return (
-    <section className='steps mt-10 relative z-20 bg-white'>
+    <section className="bg-white py-20 px-4 lg:px-16">
+      <div className="text-center mb-12">
+        <h1 className="text-sm text-accent font-bold tracking-widest">STAY UPDATED</h1>
+        <h2 className="text-4xl font-semibold text-gray-800 mt-2">Latest News</h2>
+      </div>
 
-        <div className="">
-            <h1 className=' flex items-center justify-center font-bold text-sm  text-accent'>STAY UPDATED</h1>
-            <h2 className=' flex items-center justify-center font-semibold text-4xl'>Latest News</h2>
-        </div> 
-
-
-    
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pt-8">
-
-            <div className="w-full h-[600] relative overflow-hidden rounded-2xl shadow-lg">
-                <div className="">
-                    <img src={update_1} alt="holiday escape" className='w-full h-full object-cover' />
-                </div>
-
-                <h1 className=' font-semibold mt-2 ml-4'>Transforming Common Spaces in Modern Hotels</h1>
-                <h2 className='mt-3 ml-4 text-gray-600 text-sm mb-4'>With style and grace, hotels redefine, Shared spaces that feel warm, not just fine. From lobbies to lounges, modern and bright, Where comfort and community both unite.</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {updates.map((update, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02]"
+          >
+            <img
+              src={update.image}
+              alt={update.title}
+              className="w-full h-64 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                {update.title}
+              </h3>
+              <p className="text-sm text-gray-600">{update.description}</p>
             </div>
-
-
-            <div className="w-full h-[600] relative overflow-hidden rounded-2xl shadow-lg">
-                <div className="mb-0 pb-0">
-                    <img src={update_2} alt="holiday escape" className='w-full h-full object-cover' />
-                </div>
-
-                <h1 className=' font-semibold mt-2 ml-4'>Innovative Marketing Strategies for Boutique Hotels</h1>
-                <h2 className='mt-3 ml-4 text-gray-600 text-sm mb-6'>Crafting stories that guests adore, Beyond the stay, they offer more. With charm and voice that truly sells, Boutique hotels weave magic well.</h2>
-            </div>
-
-
-            <div className="w-full h-[600] relative overflow-hidden rounded-2xl shadow-lg">
-                <div className="mb-0 pb-0">
-                    <img src={update_3} alt="holiday escape" className='w-full h-full object-cover' />
-                </div>
-
-                <h1 className=' font-semibold mt-2 ml-4'>Hotels are Adapting to Modern Traveler Preferences</h1>
-                <h2 className='mt-3 ml-4 text-gray-600 text-sm mb-8'>From smart tech rooms to eco flair, Hotels now show they truly care. Personal touches, flexible stays, Shaping journeys in thoughtful ways</h2>
-            </div>
-
-        </div>
-
-        
-    
-                    
-        
+          </div>
+        ))}
+      </div>
     </section>
   )
 }
