@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class', // <-- Add this line to enable class-based dark mode
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -13,6 +13,7 @@ export default {
     backgroundImage: {
       hero: 'url(/assets/hero/bg.jpg)',
       grid: 'url(/assets/grid/bg.jpg)',
+      welcome: 'url(/assets/hotel/welcome-bg.jpg)', // Add your image to public/assets/hotel/
     },
     extend: {
       colors: {
@@ -25,6 +26,15 @@ export default {
           DEFAULT: '#cda274',
           secondary: '#f4f0ec',
           hover: '#b88c5d',
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 1.2s ease-out forwards',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0, transform: 'translateY(10px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
         },
       },
     },
