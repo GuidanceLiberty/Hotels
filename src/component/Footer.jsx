@@ -101,7 +101,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="footer__item mx-w-[260px] mx-auto lg:mx-0 text-xl">
+                    <div className="footer__item mx-w-[260px] mx-auto lg:mx-0 text-xl mb-3">
                         <h3 className='text-3xl mb-3'>Address</h3>
                         <div className="flex flex-col gap-2">
                             <p className='text-center ml-5'>
