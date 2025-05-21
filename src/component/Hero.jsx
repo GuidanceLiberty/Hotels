@@ -24,7 +24,7 @@ const slides = [
     id: 1,
     image: Room_1,
     title: 'Deluxe Room',
-    text: 'Discover the ultimate luxury in our beachfront suites and spa experiences.',
+    text: '',
   },
   {
     id: 2,
