@@ -3,28 +3,58 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import heroImg1 from '../assets/hero/hero-3.jpg'
-import heroImg2 from '../assets/hero/hero-4.jpg'
-import heroImg3 from '../assets/hero/hero-5.jpeg' // Add or adjust as needed
+import hero_3 from '../assets/hero/hero-3.jpg'
+import Room_1 from '../assets/images/room-10.jpg'
+import Room_2 from '../assets/images/room-11.jpg'
+import Room_3 from '../assets/images/room-12.jpg'
+import Room_4 from '../assets/images/room-13.jpg'
+import Room_5 from '../assets/images/room-9.jpg'
+import Room_6 from '../assets/images/room-14.jpg'
+ // Add or adjust as needed
 
 const slides = [
+
+  {
+    id: 0,
+    image: hero_3,
+    title: 'Holiday Bliss Await You!',
+    text: 'Discover the ultimate luxury in our beachfront suites and spa experiences.',
+  },
   {
     id: 1,
-    image: heroImg1,
-    title: 'Experience Paradise',
+    image: Room_1,
+    title: 'Deluxe Room',
     text: 'Discover the ultimate luxury in our beachfront suites and spa experiences.',
   },
   {
     id: 2,
-    image: heroImg2,
-    title: 'Holiday Bliss Awaits You',
-    text: 'Immerse yourself in the epitome of luxury at New-Guidance, your premier destination in Lagos.',
+    image: Room_2,
+    title: 'Family Suite',
+    text: '',
   },
   {
     id: 3,
-    image: heroImg3,
-    title: 'Escape to Elegance',
-    text: 'A serene escape for discerning travelers seeking beauty and comfort.',
+    image: Room_3,
+    title: 'Alpine Retreat',
+    text: '',
+  },
+  {
+    id: 4,
+    image: Room_4,
+    title: 'Summit Suite',
+    text: '',
+  },
+  {
+    id: 5,
+    image: Room_5,
+    title: 'Timber Heaven',
+    text: '',
+  },
+  {
+    id: 6,
+    image: Room_6,
+    title: 'Cliffside Chalet',
+    text: '',
   }
 ]
 
