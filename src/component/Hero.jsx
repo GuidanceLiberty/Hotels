@@ -33,8 +33,8 @@ const Hero = () => {
     <section className="relative z-20 bg-white dark:bg-primary transition-colors duration-300">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
-        autoplay={{ delay: 5000 }}
-        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        pagination={{ clickable: true, dynamicBullets: true }}
         navigation
         loop
         className="w-full h-screen"
@@ -45,20 +45,23 @@ const Hero = () => {
               className="w-full h-full bg-center bg-cover flex items-center justify-center bg-fixed relative"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              {/* Dark mode overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-40 dark:bg-opacity-60 transition-all duration-300"></div>
+              {/* Dark mode overlay with gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent dark:from-black/90 dark:via-black/60 dark:to-transparent transition-all duration-500"></div>
 
               {/* Slide content */}
-              <div className="text-center px-6 sm:px-12 max-w-3xl relative z-10">
-                <h1 className="text-3xl sm:text-5xl font-extrabold text-white drop-shadow-lg mb-4">
+              <div className="relative z-10 max-w-4xl text-center px-6 sm:px-12">
+                <h1 className="text-4xl sm:text-6xl font-extrabold text-white drop-shadow-lg mb-6 animate-fade-in-up">
                   {slide.title}
                 </h1>
                 {slide.text && (
-                  <p className="text-lg sm:text-xl text-white font-semibold drop-shadow-md mb-8 max-w-xl mx-auto">
+                  <p className="text-lg sm:text-2xl text-white font-semibold drop-shadow-md mb-10 max-w-3xl mx-auto animate-fade-in-up delay-200">
                     {slide.text}
                   </p>
                 )}
-                <button className="btn bg-accent text-white px-8 py-4 rounded-md shadow-xl transition-transform transform hover:scale-105 duration-300">
+                <button
+                  className="inline-block bg-accent hover:bg-accent-hover text-white px-10 py-4 rounded-full shadow-lg transition-transform transform hover:scale-110 duration-300 font-semibold animate-fade-in-up delay-400"
+                  aria-label="Book your stay"
+                >
                   BOOK YOUR STAY
                 </button>
               </div>
@@ -66,6 +69,29 @@ const Hero = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* Tailwind keyframes for fadeInUp animation */}
+      <style jsx>{`
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 1s ease forwards;
+        }
+        .animate-fade-in-up.delay-200 {
+          animation-delay: 0.2s;
+        }
+        .animate-fade-in-up.delay-400 {
+          animation-delay: 0.4s;
+        }
+      `}</style>
     </section>
   )
 }

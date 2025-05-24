@@ -10,6 +10,7 @@ import Reservation from "./component/Reservation";
 import SpecialOffers from "./component/SpecialOffers";
 import Theme from "./component/Theme";
 import Updates from "./component/Updates";
+import Services from "./component/Services";
 
 function App() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -53,6 +54,7 @@ function App() {
           <main className="max-w-[1920px] mx-auto overflow-hidden">
             <Navbar />
             <Hero />
+            <Services />
             <Projects />
             <Reservation />
             <SpecialOffers />

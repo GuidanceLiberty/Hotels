@@ -13,7 +13,7 @@ export default {
     backgroundImage: {
       hero: 'url(/assets/hero/bg.jpg)',
       grid: 'url(/assets/grid/bg.jpg)',
-      welcome: 'url(/assets/hotel/welcome-bg.jpg)', // Add your image to public/assets/hotel/
+      welcome: 'url(/assets/hotel/welcome-bg.jpg)',
     },
     extend: {
       colors: {
@@ -33,7 +33,7 @@ export default {
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: 0, transform: 'translateY(10px)' },
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
         },
       },

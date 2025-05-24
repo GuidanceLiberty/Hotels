@@ -14,26 +14,32 @@ const AboutUs = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-40 dark:bg-opacity-60 flex flex-col justify-center px-4 sm:px-8 transition-all duration-300">
+        <div className="absolute inset-0 bg-black bg-opacity-50 dark:bg-opacity-70 flex flex-col justify-center px-6 sm:px-12 max-w-4xl mx-auto text-center space-y-6 transition-all duration-500 opacity-0 animate-fade-in relative z-10 rounded-lg">
           {/* Stars */}
-          <div className="flex justify-center items-center text-accent mb-6">
+          <div className="flex justify-center items-center text-accent mb-4 space-x-1">
             {[...Array(5)].map((_, i) => (
-              <RiStarFill key={i} />
+              <RiStarFill key={i} className="text-2xl" />
             ))}
           </div>
 
           {/* Heading */}
-          <h1 className="max-w-3xl mx-auto text-center text-xl sm:text-2xl lg:text-3xl font-bold text-white dark:text-white">
-            Experience unparalleled luxury and personalized service at
-            <span className="text-accent"> New-Guidance Hotel</span>, where
-            every stay is a journey into sophistication, comfort, and
-            unforgettable memories.
+          <h1 className="text-white text-3xl sm:text-4xl font-extrabold leading-snug drop-shadow-lg">
+            Experience unparalleled luxury and personalized service at{' '}
+            <span className="text-accent">New-Guidance Hotel</span>, where every stay is a journey into sophistication, comfort, and unforgettable memories.
           </h1>
 
-          {/* Name */}
-          <h2 className="text-center text-sm mt-6 text-white dark:text-gray-300">
-            Rahel Drake
-          </h2>
+          {/* Short description */}
+          <p className="text-white/90 max-w-xl mx-auto text-base sm:text-lg font-light drop-shadow-md">
+            From elegantly designed rooms to top-tier amenities, we ensure your stay is nothing short of exceptional. Discover the perfect blend of tranquility and elegance.
+          </p>
+
+          {/* Call to action */}
+          <button className="mt-4 bg-accent hover:bg-accent-hover text-white px-8 py-3 rounded-full font-semibold shadow-lg transition-transform transform hover:scale-105">
+            Learn More
+          </button>
+
+          {/* Name / Testimonial */}
+          <footer className="mt-8 italic text-white/70 text-sm">— Rahel Drake, Founder</footer>
         </div>
       </div>
     </section>

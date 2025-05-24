@@ -33,31 +33,40 @@ const offers = [
 
 const SpecialOffers = () => {
   return (
-    <section className="bg-accent dark:bg-primary py-20 px-4 lg:px-16 transition-colors duration-300">
-      <div className="text-center text-white mb-12">
-        <h1 className="font-bold text-sm tracking-widest">GRAB IT NOW</h1>
-        <h2 className="text-4xl font-semibold mt-2">Special Offers</h2>
+    <section className="bg-accent dark:bg-primary py-20 px-6 lg:px-20 transition-colors duration-300">
+      <div className="text-center text-white mb-16 max-w-4xl mx-auto">
+        <h1 className="font-bold text-sm tracking-widest uppercase">Grab it Now</h1>
+        <h2 className="text-5xl font-extrabold mt-3 tracking-tight leading-tight">
+          Special <span className="text-yellow-400">Offers</span>
+        </h2>
+        <p className="mt-4 text-lg max-w-3xl mx-auto text-yellow-100 font-medium">
+          Exclusive deals crafted for your perfect stay. Don't miss out!
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {offers.map((offer, index) => (
           <div
             key={index}
-            className="relative h-[450px] rounded-2xl overflow-hidden shadow-lg group transition-transform duration-300 hover:scale-[1.02]"
+            className="relative h-[480px] rounded-3xl overflow-hidden shadow-2xl group cursor-pointer transform transition-transform duration-300 hover:scale-105"
           >
             <img
               src={offer.image}
               alt={offer.title}
-              className="w-full h-full object-cover group-hover:brightness-75 transition duration-300"
+              className="w-full h-full object-cover object-center group-hover:brightness-75 transition duration-300"
+              loading="lazy"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-6 text-white">
-              <h3 className="text-2xl font-bold text-center mb-3">{offer.title}</h3>
-              <p className="text-center text-sm mb-4">{offer.description}</p>
-              <div className="flex justify-center">
-                <button className="bg-white text-accent font-medium px-5 py-2 rounded-full text-sm hover:bg-gray-200 dark:hover:bg-gray-300 transition">
-                  VIEW DETAILS
-                </button>
-              </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300" />
+
+            <div className="absolute bottom-6 left-6 right-6 text-white flex flex-col items-center">
+              <h3 className="text-3xl font-extrabold mb-2 drop-shadow-lg text-center">{offer.title}</h3>
+              <p className="text-center text-sm mb-6 px-3 leading-relaxed drop-shadow-md">{offer.description}</p>
+              <button
+                className="bg-yellow-400 text-primary font-semibold px-6 py-2 rounded-full shadow-lg hover:bg-yellow-300 transition"
+                aria-label={`View details for ${offer.title}`}
+              >
+                View Details
+              </button>
             </div>
           </div>
         ))}

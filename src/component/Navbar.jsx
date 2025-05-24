@@ -12,6 +12,8 @@ import { Link as ScrollLink } from 'react-scroll';
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
   // Initialize dark mode from localStorage
   useEffect(() => {
@@ -20,6 +22,15 @@ const Navbar = () => {
       document.documentElement.classList.add('dark');
       setDarkMode(true);
     }
+  }, []);
+
+  // Listen for scroll to add shadow or background opacity
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Toggle dark mode
@@ -32,8 +43,31 @@ const Navbar = () => {
     setDarkMode(newMode);
   };
 
+  // Define menu items, and for services, include subitems
+  const menuItems = [
+    { name: 'home' },
+    { name: 'about' },
+    {
+      name: 'services',
+      subItems: [
+        { name: 'room booking', to: 'room-booking' },
+        { name: 'spa & wellness', to: 'spa-wellness' },
+        { name: 'dining', to: 'dining' },
+      ],
+    },
+    { name: 'blog' },
+    { name: 'testimonials' },
+    { name: 'contact' },
+  ];
+
   return (
-    <header className="bg-white dark:bg-primary text-black dark:text-white shadow-md fixed top-0 w-full z-50 transition-colors duration-300">
+    <header
+      className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
+        scrolled
+          ? 'bg-white/90 dark:bg-primary/90 shadow-md backdrop-blur-md'
+          : 'bg-white dark:bg-primary'
+      } text-black dark:text-white`}
+    >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Brand */}
         <div className="group transition-all duration-300">
@@ -54,18 +88,46 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-6 items-center">
-          {['home', 'about', 'services', 'blog', 'testimonials', 'contact'].map((item) => (
-            <ScrollLink
-              key={item}
-              to={item}
-              smooth
-              duration={500}
-              className="cursor-pointer capitalize hover:text-accent transition"
-            >
-              {item}
-            </ScrollLink>
-          ))}
+        <nav className="hidden md:flex space-x-6 items-center relative">
+          {menuItems.map((item) =>
+            item.subItems ? (
+              <div
+                key={item.name}
+                className="relative"
+                onMouseEnter={() => setServicesDropdownOpen(true)}
+                onMouseLeave={() => setServicesDropdownOpen(false)}
+              >
+                <span className="cursor-pointer capitalize hover:text-accent transition select-none">
+                  {item.name}
+                </span>
+                {servicesDropdownOpen && (
+                  <div className="absolute top-full mt-2 left-0 bg-white dark:bg-primary shadow-lg rounded-md py-2 min-w-[180px] z-50">
+                    {item.subItems.map((subItem) => (
+                      <ScrollLink
+                        key={subItem.name}
+                        to={subItem.to}
+                        smooth
+                        duration={500}
+                        className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-accent hover:text-white cursor-pointer transition"
+                      >
+                        {subItem.name}
+                      </ScrollLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <ScrollLink
+                key={item.name}
+                to={item.name}
+                smooth
+                duration={500}
+                className="cursor-pointer capitalize hover:text-accent transition"
+              >
+                {item.name}
+              </ScrollLink>
+            )
+          )}
 
           {/* Dark Mode Toggle */}
           <button
@@ -97,18 +159,38 @@ const Navbar = () => {
       {openMenu && (
         <div className="md:hidden bg-white dark:bg-primary text-black dark:text-white px-6 pb-6 transition-colors duration-300">
           <div className="flex flex-col space-y-4">
-            {['home', 'about', 'services', 'blog', 'testimonials', 'contact'].map((item) => (
-              <ScrollLink
-                key={item}
-                to={item}
-                smooth
-                duration={500}
-                onClick={() => setOpenMenu(false)}
-                className="cursor-pointer capitalize hover:text-accent transition"
-              >
-                {item}
-              </ScrollLink>
-            ))}
+            {menuItems.map((item) =>
+              item.subItems ? (
+                <div key={item.name}>
+                  <span className="capitalize font-semibold">{item.name}</span>
+                  <div className="ml-4 flex flex-col space-y-2 mt-2">
+                    {item.subItems.map((subItem) => (
+                      <ScrollLink
+                        key={subItem.name}
+                        to={subItem.to}
+                        smooth
+                        duration={500}
+                        onClick={() => setOpenMenu(false)}
+                        className="cursor-pointer capitalize hover:text-accent transition"
+                      >
+                        {subItem.name}
+                      </ScrollLink>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <ScrollLink
+                  key={item.name}
+                  to={item.name}
+                  smooth
+                  duration={500}
+                  onClick={() => setOpenMenu(false)}
+                  className="cursor-pointer capitalize hover:text-accent transition"
+                >
+                  {item.name}
+                </ScrollLink>
+              )
+            )}
 
             {/* Dark Mode Toggle */}
             <button
@@ -131,4 +213,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
