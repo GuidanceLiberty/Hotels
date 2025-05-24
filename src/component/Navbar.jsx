@@ -14,6 +14,7 @@ const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     const storedDark = localStorage.getItem('darkMode');
@@ -132,7 +133,7 @@ const Navbar = () => {
             {darkMode ? <RiSunLine /> : <RiMoonLine />}
           </button>
 
-          {/* ✅ Book Now Button */}
+          {/* Book Now Button */}
           <a
             href="/booking"
             className="ml-4 bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded flex items-center transition"
@@ -159,21 +160,29 @@ const Navbar = () => {
             {menuItems.map((item) =>
               item.subItems ? (
                 <div key={item.name}>
-                  <span className="capitalize font-semibold">{item.name}</span>
-                  <div className="ml-4 flex flex-col space-y-2 mt-2">
-                    {item.subItems.map((subItem) => (
-                      <ScrollLink
-                        key={subItem.name}
-                        to={subItem.to}
-                        smooth
-                        duration={500}
-                        onClick={() => setOpenMenu(false)}
-                        className="cursor-pointer capitalize hover:text-accent transition"
-                      >
-                        {subItem.name}
-                      </ScrollLink>
-                    ))}
-                  </div>
+                  <button
+                    className="capitalize font-semibold flex justify-between w-full"
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  >
+                    {item.name}
+                    <span>{mobileServicesOpen ? '▲' : '▼'}</span>
+                  </button>
+                  {mobileServicesOpen && (
+                    <div className="ml-4 flex flex-col space-y-2 mt-2">
+                      {item.subItems.map((subItem) => (
+                        <ScrollLink
+                          key={subItem.name}
+                          to={subItem.to}
+                          smooth
+                          duration={500}
+                          onClick={() => setOpenMenu(false)}
+                          className="cursor-pointer capitalize hover:text-accent transition"
+                        >
+                          {subItem.name}
+                        </ScrollLink>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ) : (
                 <ScrollLink
@@ -197,7 +206,7 @@ const Navbar = () => {
               {darkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
 
-            {/* ✅ Book Now Button (Mobile) */}
+            {/* Book Now Button (Mobile) */}
             <a
               href="/booking"
               onClick={() => setOpenMenu(false)}

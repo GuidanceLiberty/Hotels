@@ -9,9 +9,6 @@ import Room_4 from '../assets/hero/hotel-4.jpg';
 import Room_5 from '../assets/hero/hotel-5.jpg';
 import Room_6 from '../assets/hero/hotel-6.jpg';
 
-// Set app element once for accessibility
-Modal.setAppElement('#root');
-
 const rooms = [
   {
     image: Room_1,
@@ -57,7 +54,7 @@ Offers a hot tub, outdoor deck, full kitchen, and spacious living area.`,
   },
 ];
 
-const Accommodation = () => {
+const Accomodation = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState(null);
   const navigate = useNavigate();
@@ -69,7 +66,8 @@ const Accommodation = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-    setSelectedRoom(null);
+    // Clear selectedRoom after modal close animation
+    setTimeout(() => setSelectedRoom(null), 300); // matches closeTimeoutMS
   };
 
   const handleBookNow = () => {
@@ -119,42 +117,44 @@ const Accommodation = () => {
         ))}
       </div>
 
-      {/* Modal */}
-      {selectedRoom && (
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          contentLabel="Room Details"
-          className="ReactModal__Content"
-          overlayClassName="ReactModal__Overlay"
-          closeTimeoutMS={300}
-        >
-          <h2 className="text-4xl font-semibold mb-4">{selectedRoom.title}</h2>
-          <img
-            src={selectedRoom.image}
-            alt={selectedRoom.title}
-            className="w-full h-96 object-cover rounded-lg mb-6"
-          />
-          <p className="text-lg mb-6 whitespace-pre-line">{selectedRoom.description}</p>
-          <div className="flex justify-between items-center mb-6">
-            <span className="text-2xl font-bold">Price: ${selectedRoom.price}/night</span>
+      {/* Modal always rendered */}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Room Details"
+        className="ReactModal__Content"
+        overlayClassName="ReactModal__Overlay"
+        closeTimeoutMS={300}
+      >
+        {selectedRoom && (
+          <>
+            <h2 className="text-4xl font-semibold mb-4">{selectedRoom.title}</h2>
+            <img
+              src={selectedRoom.image}
+              alt={selectedRoom.title}
+              className="w-full h-96 object-cover rounded-lg mb-6"
+            />
+            <p className="text-lg mb-6 whitespace-pre-line">{selectedRoom.description}</p>
+            <div className="flex justify-between items-center mb-6">
+              <span className="text-2xl font-bold">Price: ${selectedRoom.price}/night</span>
+              <button
+                onClick={closeModal}
+                className="bg-accent text-white px-6 py-2 rounded-full hover:bg-accent-hover transition"
+              >
+                Close
+              </button>
+            </div>
             <button
-              onClick={closeModal}
-              className="bg-accent text-white px-6 py-2 rounded-full hover:bg-accent-hover transition"
+              onClick={handleBookNow}
+              className="w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-lg font-semibold transition"
             >
-              Close
+              Book Your Stay
             </button>
-          </div>
-          <button
-            onClick={handleBookNow}
-            className="w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-lg font-semibold transition"
-          >
-            Book Your Stay
-          </button>
-        </Modal>
-      )}
+          </>
+        )}
+      </Modal>
     </section>
   );
 };
 
-export default Accommodation;
+export default Accomodation;

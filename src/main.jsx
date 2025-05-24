@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App.jsx';
-import Booking from './pages/Booking.jsx';         // Confirm this path is correct
-import Availability from './pages/Availability.jsx'; // Add your Availability page here
+import Booking from './pages/Booking.jsx';         
+import Availability from './pages/Availability.jsx'; 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
