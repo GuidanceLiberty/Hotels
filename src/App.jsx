@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Modal from "react-modal";  // <-- add this import
+
 import AboutUs from "./component/AboutUs";
 import Accomodation from "./component/Accomodation";
 import Facilities from "./component/Facilities";
@@ -11,6 +13,9 @@ import SpecialOffers from "./component/SpecialOffers";
 import Theme from "./component/Theme";
 import Updates from "./component/Updates";
 import Services from "./component/Services";
+
+// Set app element for react-modal (important for accessibility)
+Modal.setAppElement('#root');
 
 function App() {
   const [showWelcome, setShowWelcome] = useState(true);

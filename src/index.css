@@ -1,16 +1,13 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 a {
     @apply text-[20px] hover:text-accent transition-all duration-300 p-2;
 }
 
-
 .btn {
-    @apply h-[55px] px-[30px] text-[1rem] transition-all duration-300 text-white rounded-[18px] flex items-center gap-2 
+    @apply h-[55px] px-[30px] text-[1rem] transition-all duration-300 text-white rounded-[18px] flex items-center gap-2;
 }
 
 .btn-primary {
@@ -26,41 +23,32 @@ a {
 }
 
 .nav-div {
-    @apply mx-auto flex justify-between items-center py-[-2rem] text-[0.9rem] text-gray-500
+    @apply mx-auto flex justify-between items-center py-[-2rem] text-[0.9rem] text-gray-500;
 }
 
 .menu-items {
-    @apply hidden sm:flex md:flex justify-start gap-7 cursor-pointer ;
-}   
+    @apply hidden sm:flex md:flex justify-start gap-7 cursor-pointer;
+}
 
 .menu-item {
-    @apply border-transparent hover:border-b-gray-500 hover:scale-105 transition-all
-     ease-in-out duration-500;
+    @apply border-transparent hover:border-b-gray-500 hover:scale-105 transition-all ease-in-out duration-500;
 }
 
 .mobile-menu {
-    @apply flex flex-col relative mt-5 px-3 gap-3 border border-accent-secondary rounded-xl cursor-pointer  items-center
+    @apply flex flex-col relative mt-5 px-3 gap-3 border border-accent-secondary rounded-xl cursor-pointer items-center;
 }
 
 .btn-right-arrow {
-    @apply bg-accent-secondary hover:bg-accent/30 w-[45px] rounded-full transition-all ease-in-out duration-300
+    @apply bg-accent-secondary hover:bg-accent/30 w-[45px] rounded-full transition-all ease-in-out duration-300;
 }
 
 .btn_item {
-    @apply h-[75px] rounded-md
+    @apply h-[75px] rounded-md;
 }
 
-
-  
-/* .footer {
-    z-index: 20px;
-    margin-top: 0px;
-    margin-top: 150px;
-} */
-
+/* Footer related */
 .flex_div {
-    gap: 2rem;
-    gap: 100px;
+    gap: 100px; /* Override previous gap */
     margin-bottom: 150px;
 }
 
@@ -82,8 +70,7 @@ a {
 }
 
 .flex-1 {
-    gap: 2rem;
-    gap: 100px;
+    gap: 100px; /* Override previous gap */
 }
 
 .footer__item {
@@ -103,14 +90,28 @@ a {
 .letter-spacing {
     left: 0.5em;
 }
+
 .border_line {
     width: 12rem;
 }
 
+/* Modal styles */
+.ReactModal__Overlay {
+  @apply fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-[1000];
+}
 
+.ReactModal__Content {
+  @apply relative bg-white rounded-lg p-6 max-w-[700px] max-h-[90vh] overflow-y-auto shadow-lg text-black;
+  transition: all 0.3s ease;
+  transform-origin: center center;
+}
 
+.ReactModal__Content--after-open {
+  transform: scale(1);
+  opacity: 1;
+}
 
-
-
-
-    
+.ReactModal__Content--before-close {
+  transform: scale(0.9);
+  opacity: 0;
+}

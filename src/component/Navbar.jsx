@@ -15,7 +15,6 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
-  // Initialize dark mode from localStorage
   useEffect(() => {
     const storedDark = localStorage.getItem('darkMode');
     if (storedDark === 'true') {
@@ -24,7 +23,6 @@ const Navbar = () => {
     }
   }, []);
 
-  // Listen for scroll to add shadow or background opacity
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -33,7 +31,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Toggle dark mode
   const toggleDarkMode = () => {
     const html = document.documentElement;
     const newMode = !darkMode;
@@ -43,7 +40,6 @@ const Navbar = () => {
     setDarkMode(newMode);
   };
 
-  // Define menu items, and for services, include subitems
   const menuItems = [
     { name: 'home' },
     { name: 'about' },
@@ -75,11 +71,9 @@ const Navbar = () => {
             <span className="text-primary dark:text-white">New</span>
             <span className="ml-1 text-accent">Guidance</span>
           </h1>
-
           <p className="text-sm text-gray-600 dark:text-gray-300 italic mt-1 group-hover:text-accent transition">
             Luxury redefined. Comfort reimagined.
           </p>
-
           <div className="flex justify-start text-accent mt-2 animate-pulse">
             {[...Array(5)].map((_, i) => (
               <RiStarFill key={i} className="text-lg" />
@@ -138,11 +132,14 @@ const Navbar = () => {
             {darkMode ? <RiSunLine /> : <RiMoonLine />}
           </button>
 
-          {/* Book Now Button */}
-          <button className="ml-4 bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded flex items-center transition">
+          {/* ✅ Book Now Button */}
+          <a
+            href="/booking"
+            className="ml-4 bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded flex items-center transition"
+          >
             <RiPhoneFill className="mr-2" />
             Book Now
-          </button>
+          </a>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -200,11 +197,15 @@ const Navbar = () => {
               {darkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
 
-            {/* Book Now Button */}
-            <button className="bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded flex items-center transition">
+            {/* ✅ Book Now Button (Mobile) */}
+            <a
+              href="/booking"
+              onClick={() => setOpenMenu(false)}
+              className="bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded flex items-center transition"
+            >
               <RiPhoneFill className="mr-2" />
               Book Now
-            </button>
+            </a>
           </div>
         </div>
       )}
