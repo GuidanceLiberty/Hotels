@@ -17,10 +17,10 @@ const rooms = [
 
 const Accomodation = () => {
   return (
-    <section className="bg-white mt-8 px-4 lg:px-16 py-12">
+    <section className="bg-white dark:bg-primary text-black dark:text-white transition-colors duration-300 mt-8 px-4 lg:px-16 py-12">
       <div className="text-center mb-12">
         <h1 className="text-accent font-bold text-sm tracking-widest">OUR ROOMS</h1>
-        <h2 className="text-4xl font-semibold text-gray-800 mt-2">Accommodation</h2>
+        <h2 className="text-4xl font-semibold text-gray-800 dark:text-white mt-2">Accommodation</h2>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -34,7 +34,7 @@ const Accomodation = () => {
               alt={room.title}
               className="w-full h-full object-cover group-hover:brightness-75 transition duration-300"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white">
+            <div className="absolute inset-0 bg-black bg-opacity-40 dark:bg-opacity-60 flex flex-col justify-end p-6 text-white">
               <h3 className="text-2xl font-bold text-center">{room.title}</h3>
               <div className="flex justify-center gap-4 mt-2 text-sm text-gray-200">
                 <span>2 Guests</span>

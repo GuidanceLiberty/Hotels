@@ -56,7 +56,7 @@ const Facilities = () => {
           {facilities.map((facility, index) => (
             <div
               key={index}
-              className="step_step text-center text-secondary dark:text-gray-300"
+              className="step_step text-center text-secondary dark:text-gray-300 transition duration-300"
             >
               <div className="flex justify-center mb-4">
                 <button className="btn_item bg-accent hover:bg-accent-hover transition mx-auto p-4 rounded-full">
@@ -66,7 +66,7 @@ const Facilities = () => {
               <h2 className="text-3xl mb-5 font-bold text-black dark:text-white">
                 {facility.title}
               </h2>
-              <p className="mb-5 max-w-md mx-auto text-[1.1rem]">
+              <p className="mb-5 max-w-md mx-auto text-[1.1rem] dark:text-gray-300">
                 {facility.description}
               </p>
               <a

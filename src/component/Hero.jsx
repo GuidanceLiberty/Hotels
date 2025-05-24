@@ -30,7 +30,7 @@ const slides = [
 
 const Hero = () => {
   return (
-    <section className='relative z-20'>
+    <section className="relative z-20 bg-white dark:bg-primary transition-colors duration-300">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{ delay: 5000 }}
@@ -42,10 +42,13 @@ const Hero = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="w-full h-full bg-center bg-cover flex items-center justify-center bg-fixed"
+              className="w-full h-full bg-center bg-cover flex items-center justify-center bg-fixed relative"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+              {/* Dark mode overlay */}
+              <div className="absolute inset-0 bg-black bg-opacity-40 dark:bg-opacity-60 transition-all duration-300"></div>
+
+              {/* Slide content */}
               <div className="text-center px-6 sm:px-12 max-w-3xl relative z-10">
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-white drop-shadow-lg mb-4">
                   {slide.title}
@@ -63,16 +66,6 @@ const Hero = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      {/* Navigation and Pagination dots - optional styling */}
-      <div className="absolute top-1/2 left-0 right-0 flex justify-between px-6 z-30">
-        <button className="bg-white text-black p-2 rounded-full shadow-lg opacity-80 hover:opacity-100 transition">
-          &#x2190;
-        </button>
-        <button className="bg-white text-black p-2 rounded-full shadow-lg opacity-80 hover:opacity-100 transition">
-          &#x2192;
-        </button>
-      </div>
     </section>
   )
 }

@@ -1,7 +1,7 @@
-import React from 'react'
-import update_1 from '../assets/hero/update-1.jpg'
-import update_2 from '../assets/hero/update-4.jpg'
-import update_3 from '../assets/hero/update-5.jpg'
+import React from 'react';
+import update_1 from '../assets/hero/update-1.jpg';
+import update_2 from '../assets/hero/update-4.jpg';
+import update_3 from '../assets/hero/update-5.jpg';
 
 const updates = [
   {
@@ -22,21 +22,21 @@ const updates = [
     description:
       'From smart tech rooms to eco flair, hotels now show they truly care. Personal touches, flexible stays, shaping journeys in thoughtful ways.',
   },
-]
+];
 
 const Updates = () => {
   return (
-    <section className="bg-white py-20 px-4 lg:px-16">
+    <section className="bg-white dark:bg-primary py-20 px-4 lg:px-16 transition-colors duration-300">
       <div className="text-center mb-12">
         <h1 className="text-sm text-accent font-bold tracking-widest">STAY UPDATED</h1>
-        <h2 className="text-4xl font-semibold text-gray-800 mt-2">Latest News</h2>
+        <h2 className="text-4xl font-semibold text-gray-800 dark:text-white mt-2">Latest News</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {updates.map((update, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02]"
+            className="bg-white dark:bg-primary rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02]"
           >
             <img
               src={update.image}
@@ -44,16 +44,16 @@ const Updates = () => {
               className="w-full h-64 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">
                 {update.title}
               </h3>
-              <p className="text-sm text-gray-600">{update.description}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{update.description}</p>
             </div>
           </div>
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Updates
+export default Updates;

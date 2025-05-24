@@ -49,19 +49,21 @@ function App() {
       )}
 
       {!showWelcome && (
-        <main className="max-w-[1920px] mx-auto bg-white overflow-hidden">
-          <Navbar />
-          <Hero />
-          <Projects />
-          <Reservation />
-          <SpecialOffers />
-          <Accomodation />
-          <Facilities />
-          <AboutUs />
-          <Updates />
-          <Theme />
-          <Footer />
-        </main>
+        <div className="bg-white dark:bg-primary text-black dark:text-white transition-colors duration-300 min-h-screen">
+          <main className="max-w-[1920px] mx-auto overflow-hidden">
+            <Navbar />
+            <Hero />
+            <Projects />
+            <Reservation />
+            <SpecialOffers />
+            <Accomodation />
+            <Facilities />
+            <AboutUs />
+            <Updates />
+            <Theme />
+            <Footer />
+          </main>
+        </div>
       )}
     </>
   );

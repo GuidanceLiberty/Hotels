@@ -14,7 +14,7 @@ const AboutUs = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center px-4 sm:px-8">
+        <div className="absolute inset-0 bg-black bg-opacity-40 dark:bg-opacity-60 flex flex-col justify-center px-4 sm:px-8 transition-all duration-300">
           {/* Stars */}
           <div className="flex justify-center items-center text-accent mb-6">
             {[...Array(5)].map((_, i) => (
@@ -23,7 +23,7 @@ const AboutUs = () => {
           </div>
 
           {/* Heading */}
-          <h1 className="max-w-3xl mx-auto text-center text-xl sm:text-2xl lg:text-3xl font-bold">
+          <h1 className="max-w-3xl mx-auto text-center text-xl sm:text-2xl lg:text-3xl font-bold text-white dark:text-white">
             Experience unparalleled luxury and personalized service at
             <span className="text-accent"> New-Guidance Hotel</span>, where
             every stay is a journey into sophistication, comfort, and
@@ -31,7 +31,9 @@ const AboutUs = () => {
           </h1>
 
           {/* Name */}
-          <h2 className="text-center text-sm mt-6">Rahel Drake</h2>
+          <h2 className="text-center text-sm mt-6 text-white dark:text-gray-300">
+            Rahel Drake
+          </h2>
         </div>
       </div>
     </section>
