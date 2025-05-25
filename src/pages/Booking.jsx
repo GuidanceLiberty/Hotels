@@ -21,12 +21,24 @@ const Booking = () => {
     e.preventDefault();
 
     alert(`Thanks, ${formData.name}! Your booking request has been received.`);
-    navigate('/'); // Redirect back to Reservation page
+    navigate('/'); // Redirect back to home
+  };
+
+  const goToHeroSection = () => {
+    navigate('/#hero');
   };
 
   return (
     <div className="max-w-xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6 text-accent">Booking</h1>
+
+      <button
+        onClick={goToHeroSection}
+        className="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 mb-4"
+      >
+        Back to Home
+      </button>
+
       <form onSubmit={handleSubmit} className="space-y-4 bg-white dark:bg-primary p-6 rounded shadow">
         <div>
           <label className="block mb-1 font-semibold" htmlFor="name">Name</label>

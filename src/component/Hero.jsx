@@ -31,7 +31,7 @@ const slides = [
 
 const Hero = () => {
   return (
-    <section className="relative z-20 bg-white dark:bg-primary transition-colors duration-300">
+    <section id='hero' className="relative z-20 bg-white dark:bg-primary transition-colors duration-300">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
