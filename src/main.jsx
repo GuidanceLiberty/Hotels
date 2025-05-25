@@ -4,7 +4,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App.jsx';
 import Booking from './pages/Booking.jsx';         
-import Availability from './pages/Availability.jsx'; 
+import Availability from './pages/Availability.jsx';
+import 'swiper/css';
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

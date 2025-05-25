@@ -14,7 +14,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-24 relative">
+    <footer id='c' className="bg-gray-900 text-white pt-16 pb-24 relative">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* About */}

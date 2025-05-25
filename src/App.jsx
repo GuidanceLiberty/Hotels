@@ -10,6 +10,10 @@ import SpecialOffers from "./component/SpecialOffers";
 import Theme from "./component/Theme";
 import Updates from "./component/Updates";
 import Services from "./component/Services";
+import Contact from "./component/Contact";
+import Testimonial from "./component/Testimonial";
+import 'swiper/css';
+
 
 function App() {
   return (
@@ -22,10 +26,12 @@ function App() {
         <Reservation />
         <SpecialOffers />
         <Accomodation />
+        <Testimonial />
         <Facilities />
         <AboutUs />
         <Updates />
         <Theme />
+        <Contact />
         <Footer />
       </main>
     </div>

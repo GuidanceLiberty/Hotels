@@ -35,7 +35,6 @@ const Navbar = () => {
   const toggleDarkMode = () => {
     const html = document.documentElement;
     const newMode = !darkMode;
-
     html.classList.toggle('dark', newMode);
     localStorage.setItem('darkMode', newMode.toString());
     setDarkMode(newMode);
@@ -103,6 +102,7 @@ const Navbar = () => {
                         to={subItem.to}
                         smooth
                         duration={500}
+                        offset={-80}
                         className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-accent hover:text-white cursor-pointer transition"
                       >
                         {subItem.name}
@@ -117,6 +117,7 @@ const Navbar = () => {
                 to={item.name}
                 smooth
                 duration={500}
+                offset={-80}
                 className="cursor-pointer capitalize hover:text-accent transition"
               >
                 {item.name}
@@ -133,14 +134,17 @@ const Navbar = () => {
             {darkMode ? <RiSunLine /> : <RiMoonLine />}
           </button>
 
-          {/* Book Now Button */}
-          <a
-            href="/booking"
-            className="ml-4 bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded flex items-center transition"
+          {/* Book Now Button (Scrolls to accommodation section) */}
+          <ScrollLink
+            to="accommodation"
+            smooth
+            duration={500}
+            offset={-80}
+            className="ml-4 bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded flex items-center transition cursor-pointer"
           >
             <RiPhoneFill className="mr-2" />
             Book Now
-          </a>
+          </ScrollLink>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -175,6 +179,7 @@ const Navbar = () => {
                           to={subItem.to}
                           smooth
                           duration={500}
+                          offset={-80}
                           onClick={() => setOpenMenu(false)}
                           className="cursor-pointer capitalize hover:text-accent transition"
                         >
@@ -190,6 +195,7 @@ const Navbar = () => {
                   to={item.name}
                   smooth
                   duration={500}
+                  offset={-80}
                   onClick={() => setOpenMenu(false)}
                   className="cursor-pointer capitalize hover:text-accent transition"
                 >
@@ -206,15 +212,18 @@ const Navbar = () => {
               {darkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
 
-            {/* Book Now Button (Mobile) */}
-            <a
-              href="/booking"
+            {/* Book Now Button (Mobile - scrolls to accommodation) */}
+            <ScrollLink
+              to="accommodation"
+              smooth
+              duration={500}
+              offset={-80}
               onClick={() => setOpenMenu(false)}
-              className="bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded flex items-center transition"
+              className="bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded flex items-center transition cursor-pointer"
             >
               <RiPhoneFill className="mr-2" />
               Book Now
-            </a>
+            </ScrollLink>
           </div>
         </div>
       )}

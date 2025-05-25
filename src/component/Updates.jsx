@@ -26,7 +26,7 @@ const updates = [
 
 const Updates = () => {
   return (
-    <section className="bg-white dark:bg-primary py-20 px-4 lg:px-16 transition-colors duration-300">
+    <section id='blog' className="bg-white dark:bg-primary py-20 px-4 lg:px-16 transition-colors duration-300">
       <div className="text-center mb-12">
         <h1 className="text-sm text-accent font-bold tracking-widest">STAY UPDATED</h1>
         <h2 className="text-4xl font-semibold text-gray-800 dark:text-white mt-2">Latest News</h2>

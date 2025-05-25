@@ -3,7 +3,7 @@ import Room_A from '../assets/hero/img-11.jpg';
 
 const AboutUs = () => {
   return (
-    <section className="bg-white dark:bg-primary text-black dark:text-white">
+    <section id='about' className="bg-white dark:bg-primary text-black dark:text-white">
       <div className="relative w-full h-[600px] overflow-hidden shadow-lg">
         <img
           src={Room_A}

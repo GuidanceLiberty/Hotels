@@ -21,7 +21,7 @@ const Booking = () => {
     e.preventDefault();
 
     alert(`Thanks, ${formData.name}! Your booking request has been received.`);
-    navigate('/'); // Redirect back to home
+    navigate('/#hero'); // Redirect back to home
   };
 
   const goToHeroSection = () => {
