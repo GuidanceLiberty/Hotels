@@ -30,7 +30,7 @@ const Booking = () => {
 
   return (
     <div className="max-w-xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6 text-accent">Booking</h1>
+      <h1 className="text-3xl font-bold mb-6 text-accent dark:text-white">Booking</h1>
 
       <button
         onClick={goToHeroSection}
@@ -41,7 +41,7 @@ const Booking = () => {
 
       <form onSubmit={handleSubmit} className="space-y-4 bg-white dark:bg-primary p-6 rounded shadow">
         <div>
-          <label className="block mb-1 font-semibold" htmlFor="name">Name</label>
+          <label className="block mb-1 font-semibold dark:text-white" htmlFor="name">Name</label>
           <input
             id="name"
             name="name"
@@ -53,7 +53,7 @@ const Booking = () => {
         </div>
 
         <div>
-          <label className="block mb-1 font-semibold" htmlFor="email">Email</label>
+          <label className="block mb-1 font-semibold dark:text-white" htmlFor="email">Email</label>
           <input
             id="email"
             name="email"
@@ -66,7 +66,7 @@ const Booking = () => {
         </div>
 
         <div>
-          <label className="block mb-1 font-semibold" htmlFor="phone">Phone</label>
+          <label className="block mb-1 font-semibold dark:text-white" htmlFor="phone">Phone</label>
           <input
             id="phone"
             name="phone"
@@ -79,7 +79,7 @@ const Booking = () => {
         </div>
 
         <div>
-          <label className="block mb-1 font-semibold" htmlFor="checkIn">Check-In Date</label>
+          <label className="block mb-1 font-semibold dark:text-white" htmlFor="checkIn">Check-In Date</label>
           <input
             id="checkIn"
             name="checkIn"
@@ -92,7 +92,7 @@ const Booking = () => {
         </div>
 
         <div>
-          <label className="block mb-1 font-semibold" htmlFor="checkOut">Check-Out Date</label>
+          <label className="block mb-1 font-semibold dark:text-white" htmlFor="checkOut">Check-Out Date</label>
           <input
             id="checkOut"
             name="checkOut"

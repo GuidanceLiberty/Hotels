@@ -13,43 +13,37 @@ const rooms = [
   {
     image: Room_1,
     title: 'Deluxe Room',
-    description: `A luxurious room with a king-sized bed and ocean view. 
-Features include a flat-screen TV, minibar, high-speed Wi-Fi, and an ensuite bathroom with a Jacuzzi.`,
+    description: `A luxurious room with a king-sized bed and ocean view.`,
     price: 200,
   },
   {
     image: Room_2,
     title: 'Family Suite',
-    description: `Spacious suite with two bedrooms and a living area.
-Includes two bathrooms, a kitchenette, kids’ play area, and complimentary breakfast for the family.`,
+    description: `Spacious suite with two bedrooms and a living area.`,
     price: 300,
   },
   {
     image: Room_3,
     title: 'Alpine Retreat',
-    description: `Cozy room with mountain views and a fireplace.
-Equipped with a queen bed, seating area, balcony, and rustic decor for a warm ambiance.`,
+    description: `Cozy room with mountain views and a fireplace.`,
     price: 180,
   },
   {
     image: Room_4,
     title: 'Summit Suite',
-    description: `Elegant suite with panoramic city views.
-Features a king bed, private terrace, luxury bathroom, and workspace with ergonomic chair.`,
+    description: `Elegant suite with panoramic city views.`,
     price: 250,
   },
   {
     image: Room_5,
     title: 'Timber Heaven',
-    description: `Rustic room surrounded by forest scenery.
-Includes handcrafted furniture, a cozy fireplace, and nature-inspired decor.`,
+    description: `Rustic room surrounded by forest scenery.`,
     price: 170,
   },
   {
     image: Room_6,
     title: 'Cliffside Chalet',
-    description: `Secluded chalet with breathtaking cliff views.
-Offers a hot tub, outdoor deck, full kitchen, and spacious living area.`,
+    description: `Secluded chalet with breathtaking cliff views.`,
     price: 280,
   },
 ];
@@ -66,8 +60,7 @@ const Accomodation = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-    // Clear selectedRoom after modal close animation
-    setTimeout(() => setSelectedRoom(null), 300); // matches closeTimeoutMS
+    setTimeout(() => setSelectedRoom(null), 300);
   };
 
   const handleBookNow = () => {
@@ -75,10 +68,7 @@ const Accomodation = () => {
   };
 
   return (
-    <section
-      id="accommodation"
-      className="bg-white dark:bg-primary text-black dark:text-white transition-colors duration-300 px-4 lg:px-16 py-20"
-    >
+    <section id="accommodation" className="bg-white dark:bg-primary text-black dark:text-white transition-colors duration-300 px-4 lg:px-16 py-20">
       <div className="text-center mb-12">
         <h3 className="text-sm text-accent font-bold tracking-widest uppercase">Our Rooms</h3>
         <h2 className="text-4xl font-bold text-primary dark:text-white mt-2">Accommodation</h2>
@@ -89,10 +79,7 @@ const Accomodation = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {rooms.map((room, index) => (
-          <div
-            key={index}
-            className="relative rounded-2xl overflow-hidden shadow-xl group transition-transform transform hover:scale-[1.02] duration-300"
-          >
+          <div key={index} className="relative rounded-2xl overflow-hidden shadow-xl group transition-transform transform hover:scale-[1.02] duration-300">
             <img
               src={room.image}
               alt={room.title}
