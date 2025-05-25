@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   RiMailLine,
   RiPhoneLine,
@@ -7,6 +7,10 @@ import {
 } from '@remixicon/react';
 
 const Contact = () => {
+  const [showMap, setShowMap] = useState(false);
+
+  const toggleMap = () => setShowMap(!showMap);
+
   return (
     <section
       id="contact"
@@ -57,12 +61,36 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="flex items-start space-x-4">
+            <div
+              className="flex items-start space-x-4 cursor-pointer"
+              onClick={toggleMap}
+              role="button"
+              tabIndex={0}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') toggleMap();
+              }}
+            >
               <RiMapPinLine className="text-3xl text-accent mt-1" />
-              <p className="text-lg text-gray-800 dark:text-gray-200">
-                We are located in a serene and luxurious environment, always ready to welcome you.
+              <p className="text-lg text-gray-800 dark:text-gray-200 hover:text-accent transition">
+                105 Allen Avenue, Ikeja, Lagos
               </p>
             </div>
+
+            {/* Map Embed */}
+            {showMap && (
+              <div className="mt-6 rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  title="Location Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.574899011177!2d3.345661875036163!3d6.601567895260745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf49bd6c6f66f%3A0x6b7a4b87c9a3e720!2s105%20Allen%20Ave%2C%20Ikeja!5e0!3m2!1sen!2sng!4v1695332105420!5m2!1sen!2sng"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            )}
           </div>
 
           {/* Contact Form */}
